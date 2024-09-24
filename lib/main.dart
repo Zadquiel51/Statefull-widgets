@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.green, //Coloca el color de fondo del AppBar
+          backgroundColor: Colors.green, //Coloca el color de fondo
           title: const Text('Operaciones Aritméticas'),
         ),
         body: const OperacionesAritmeticas(),
