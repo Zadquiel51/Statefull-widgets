@@ -5,14 +5,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key}); //No olvidar que esto es un súper parametro 
+  const MyApp({super.key}); 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue, //Coloca el color de fondo del AppBar
+          backgroundColor: Colors.green, //Coloca el color de fondo del AppBar
           title: const Text('Operaciones Aritméticas'),
         ),
         body: const OperacionesAritmeticas(),
@@ -34,7 +34,7 @@ class OperacionesAritmeticasState extends State<OperacionesAritmeticas> {
   final TextEditingController _resultadoController = TextEditingController();
   String? _operacionSeleccionada;
 
-  void _calcularResultado() { //Función
+  void _calcularResultado() { //Funcion que calculará 
     double primerValor = double.parse(_primerValorController.text);
     double segundoValor = double.parse(_segundoValorController.text);
     double resultado = 0;
@@ -72,9 +72,9 @@ class OperacionesAritmeticasState extends State<OperacionesAritmeticas> {
                 controller: _primerValorController,
                 keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
-                  labelText: 'Primer valor', //Texto de la parte superior del recuadro
-                  hintText: 'Ingrese un número', //texto de la parte interior del recuadro
-                  helperText: 'Valor correcto', //Texto que aparece debajo del recuadro
+                  labelText: 'Primer valor', 
+                  hintText: 'Ingrese un número', 
+                  helperText: 'Valor correcto', 
                   filled: true,
                 ),
               ),
@@ -93,7 +93,7 @@ class OperacionesAritmeticasState extends State<OperacionesAritmeticas> {
               DropdownButton<String>(
                 value: _operacionSeleccionada,
                 hint: const Text('Operación'),
-                items: <String>['Suma', 'Resta', 'Multiplicación', 'División'] //Opciones de operaciones
+                items: <String>['Suma', 'Resta', 'Multiplicación', 'División'] 
                     .map((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -109,7 +109,7 @@ class OperacionesAritmeticasState extends State<OperacionesAritmeticas> {
               const SizedBox(height: 16),
               TextField(
                 controller: _resultadoController,
-                readOnly: true, // Para que el usuario no pueda editar el campo
+                readOnly: true, // Esto hara que el usuario solo pueda visualizar
                 decoration: const InputDecoration(
                   labelText: 'Total',
                   hintText: 'Resultado',
